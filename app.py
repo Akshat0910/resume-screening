@@ -3,8 +3,8 @@ import pickle
 import re
 import nltk
 
-nltk.download('punkt')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
 #loading models
 clf = pickle.load(open('clf.pkl','rb'))
@@ -35,7 +35,7 @@ def main():
         cleaned_resume = clean_resume(resume_text)
         input_features = tfidfd.transform([cleaned_resume])
         prediction_id = clf.predict(input_features)[0]
-        st.write(prediction_id)
+        # st.write(prediction_id)
 
         # Map category ID to category name
         category_mapping = {
